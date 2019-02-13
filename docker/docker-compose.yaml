@@ -10,6 +10,8 @@ services:
       dockerfile: docker/server/Dockerfile
     networks:
       - internal
+    extra_hosts:
+      - "logrhythm:${CONSUL_BIND}"
     ports:
       - 8080:8080
     links:
